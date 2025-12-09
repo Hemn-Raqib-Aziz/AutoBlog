@@ -26,6 +26,23 @@ function About() {
               <li>Clean, minimalistic interface</li>
               <li>Real-time updates</li>
             </ul>
+
+
+            <div className="skills-section">
+                <h3>Technologies Used:</h3>
+                <div className="skills-grid">
+                  <span className="skill-tag">NodeJS (Express)</span>
+                  <span className="skill-tag">PostgreSQL</span>
+                  <span className="skill-tag">Docker</span>
+                  <span className="skill-tag">AWS</span>
+                  <span className="skill-tag">Groq</span>
+                  <span className="skill-tag">React</span>
+                  <span className="skill-tag">JavaScript</span>
+                  <span className="skill-tag">CSS</span>
+                  <span className="skill-tag">REST APIs</span>
+                  <span className="skill-tag">Responsive Design</span>
+                </div>
+              </div>
             
             <div className="creator-info">
               <h3>Creator Information:</h3>
