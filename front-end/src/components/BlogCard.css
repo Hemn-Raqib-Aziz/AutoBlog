@@ -1,0 +1,80 @@
+.blog-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: #e0e0e0;
+}
+
+.blog-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.blog-card-content {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 1rem;
+}
+
+.read-more {
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.2s ease;
+}
+
+.blog-card:hover .read-more {
+  color: #000;
+}
+
+.read-more:after {
+  content: "→";
+  transition: transform 0.2s ease;
+}
+
+.blog-card:hover .read-more:after {
+  transform: translateX(3px);
+}
+
+.blog-card-date {
+  font-size: 0.85rem;
+  color: #999;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .blog-card {
+    padding: 1.5rem;
+  }
+  
+  .blog-card-title {
+    font-size: 1.3rem;
+  }
+}
