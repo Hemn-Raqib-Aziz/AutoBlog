@@ -19,10 +19,14 @@ const createScheduledRandomBlog = async () => {
 };
 
 export const startArticleCron = () => {
-  cron.schedule("40 22 * * *", async () => {
+  cron.schedule("50 22 * * *", async () => {
     console.log("Running daily random article cron...");
     await createScheduledRandomBlog();
-  });
+  },
+  {
+    timezone: "Asia/Baghdad"
+  }
+);
 
   console.log("Cron job activated (runs at 03:00 AM daily)");
 };
