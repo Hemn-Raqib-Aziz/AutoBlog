@@ -17,6 +17,12 @@ Here is an AutoBlog web app that I built with partial help from AI. I want to be
   I deployed the project on AWS following the challenge requirements. The backend, frontend, and database run inside Docker containers, and CodeBuild handles the automated build and deployment steps. The app is hosted on an EC2 instance with a live public URL.
 
 
+- **Nginx (Frontend SPA Hosting):**  
+  The frontend is built with Vite and served using Nginx inside a Docker container.  
+  - SPA routes (`/about`, `/blog/:id`) are handled correctly using the `try_files $uri /index.html;` directive.  
+  - Static assets are served normally under `/assets/`.  
+  - The configuration is included in `front-end/nginx.conf` and copied into the container during the Docker build.
+
 ### Daily Auto-Generation of Blog Posts
 
 To qualify for the challenge requirements, I implemented automatic daily blog generation.  
@@ -80,8 +86,8 @@ sudo yum install -y git
 
 ```bash
 cd /home/ec2-user
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO/infra
+git clone https://github.com/Hemn-Raqib-Aziz/AutoBlog.git
+cd AutoBlog/infra
 ```
 
 ## 8. Create Environment Files
@@ -100,7 +106,7 @@ GROQ_API_KEY=your_groq_api_key
 
 **Frontend .env** (`../front-end/.env`):
 ```ini
-VITE_API_BASE_URL=http://YOUR_PUBLIC_DNS:4000/api/auto-generated-blogs
+VITE_API_BASE_URL=http://localhost:4000/api/auto-generated-blogs
 ```
 
 ## 9. Run Application
