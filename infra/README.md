@@ -4,12 +4,19 @@ This folder contains the Docker Compose setup and deployment scripts for the Aut
 
 ## Run Locally
 
-1. Copy the example environment file:
-   ```bash
-   cp .env.example .env
-   ```
+1. Copy the example environment files:
 
-   Fill in your real credentials.
+   - Backend:
+     ```bash
+     cp ../back-end/src/.env.example ../back-end/src/.env
+     ```
+     Fill in the backend credentials (database, API keys, etc.).
+
+   - Frontend:
+     ```bash
+     cp ../front-end/.env.example ../front-end/.env
+     ```
+     Fill in frontend environment variables (API base URL, etc.).
 
 2. Build and start all services:
    ```bash
