@@ -19,7 +19,7 @@ const createScheduledRandomBlog = async () => {
 };
 
 export const startArticleCron = () => {
-  cron.schedule("33 32 * * *", async () => {
+  cron.schedule("40 22 * * *", async () => {
     console.log("Running daily random article cron...");
     await createScheduledRandomBlog();
   });
