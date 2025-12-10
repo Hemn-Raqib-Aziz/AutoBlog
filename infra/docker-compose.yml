@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pg1234admin
+      POSTGRES_DB: blogs
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ../back-end
+    env_file:
+      - ../back-end/src/.env
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+    restart: always
+
+  frontend:
+    build:
+      context: ../front-end
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: always
+
+volumes:
+  db_data:

@@ -1,13 +1,12 @@
-import db from './config/db.js';
 import { createDatabaseIfNotExists } from './config/initDB.js';
 import { createBlogsTable } from './models/blogs.model.js';
 import { seedBlogs } from './seeds/blogs.seed.js';
 import { startArticleCron } from './services/articleJob.js';
+import './config/config.js'
 
 export const startServer = async (app) => {
   try {
     await createDatabaseIfNotExists();
-    await db.connect();
     console.log('Database connected successfully');
 
     await createBlogsTable();
@@ -17,8 +16,8 @@ export const startServer = async (app) => {
     startArticleCron();
 
 
-    app.listen(4000, () => {
-      console.log('App running on port 4000');
+    app.listen(process.env.PORT, () => {
+      console.log(`App running on port ${process.env.PORT}`);
     });
 
   } catch (err) {

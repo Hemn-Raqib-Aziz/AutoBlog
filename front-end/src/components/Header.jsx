@@ -39,13 +39,6 @@ function Header() {
           >
             About Project
           </Link>
-          <Link 
-            to="/about-me" 
-            className={`header-link ${isActive('/about-me') ? 'active' : ''}`}
-            onClick={() => setMenuOpen(false)}
-          >
-            About Creator
-          </Link>
         </nav>
       </div>
     </header>
