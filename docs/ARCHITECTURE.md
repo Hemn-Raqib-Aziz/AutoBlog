@@ -1,19 +1,16 @@
-# System Architecture
-
-This project consists of two main services:
-
-## 1. Backend (Node.js + Express)
-- REST API
-- PostgreSQL database
-- Blog generation cron job
-- AI-powered article generator
-
-## 2. Frontend (React + Vite)
-- Fetches articles from backend
-- Displays list page + single article page
-- Responsive UI
-
-## 3. Infrastructure
-- Docker Compose for local development
-- AWS CodeBuild + EC2 deployment
-- Infrastructure scripts for server bootstrap
++--------------------+       +--------------------+       +--------------------+
+|   Frontend (React) | <---> | Backend (Node.js)  | <---> | PostgreSQL Database|
++--------------------+       +--------------------+       +--------------------+
+        ^                           |
+        |                           |
+        |                       +-----------+
+        |                       | GROQ API  |
+        |                       +-----------+
+        |
+   Docker Container
+        |
+        +--> Runs on AWS EC2 via Docker Compose
+        |
+   Scheduled Job:
+   - node-cron runs daily at 3:00 AM
+   - Triggers automatic blog generation
