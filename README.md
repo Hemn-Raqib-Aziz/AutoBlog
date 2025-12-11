@@ -8,7 +8,7 @@ Here is an AutoBlog web app that I built with partial help from AI. I want to be
   I chose these because they have a huge community, excellent documentation, and a wide range of packages and tools. The ecosystem around npm makes development faster and more flexible.
 
 - **PostgreSQL:**  
-  I selected PostgreSQL because it is widely used in production, very stable, open-source, and supported by many ORMs such as Prisma. It’s also easy to manage and works well inside Docker environments.
+  I selected PostgreSQL because it is widely used in production, very stable, open-source, and supported by many ORMs such as Prisma. It's also easy to manage and works well inside Docker environments.
 
 - **GROQ API:**  
   I used GROQ because it is simple to integrate and supports multiple AI models. It was suitable for generating automatic blog content with minimal overhead.
@@ -43,12 +43,12 @@ I used **node-cron**, and the scheduler runs **every day at 3:00 AM**, where it 
 - **Instance type:** t3.micro
 - **Security group:** `AutoBlog`
   - Add rule: SSH, Port 22, Source 0.0.0.0/0
-- **Key pair:** `AutoBlog-key-pairs.pem` (downloaded locally)
+- **Key pair:** Download your key pair file locally
 
 ## 2. Connect to EC2 via SSH
 
 ```bash
-ssh -i "AutoBlog-key-pairs.pem" ec2-user@YOUR_PUBLIC_DNS
+ssh -i "your-key-pair.pem" ec2-user@YOUR_PUBLIC_DNS
 ```
 
 ## 3. Install Docker
@@ -65,7 +65,7 @@ sudo usermod -aG docker ec2-user
 
 ```bash
 exit
-ssh -i "AutoBlog-key-pairs.pem" ec2-user@YOUR_PUBLIC_DNS
+ssh -i "your-key-pair.pem" ec2-user@YOUR_PUBLIC_DNS
 ```
 
 ## 5. Install Docker Compose
@@ -119,6 +119,5 @@ docker-compose up -d --build
 
 - **Frontend:** http://ec2-51-21-222-191.eu-north-1.compute.amazonaws.com:5173/
 
-- **Backend API:** http://ec2-51-21-222-191.eu-north-1.compute.amazonaws.com:4000/api/auto-generated-blogs/all
 
 - Daily blog generation runs at 3:00 AM via node-cron
