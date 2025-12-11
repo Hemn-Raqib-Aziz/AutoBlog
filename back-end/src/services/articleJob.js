@@ -22,7 +22,11 @@ export const startArticleCron = () => {
   cron.schedule("0 3 * * *", async () => {
     console.log("Running daily random article cron...");
     await createScheduledRandomBlog();
-  });
+  },
+    {
+      timezone: "Asia/Baghdad", // Iraqi timezone
+    }
+);
 
   console.log("Cron job activated (runs at 03:00 AM daily)");
 };
