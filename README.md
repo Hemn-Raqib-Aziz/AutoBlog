@@ -1,4 +1,4 @@
-## High-Level README Overview 
+## Overview 
 
 Here is an AutoBlog web app that I built with partial help from AI. I want to be clear: some parts were assisted, especially the areas I had no prior experience with—mainly AWS, which I used for the first time during this challenge. I also had limited experience with Docker, images, and multi-service environments, but I still managed to complete and deploy the entire system successfully.
 
