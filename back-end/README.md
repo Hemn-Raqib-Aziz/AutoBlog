@@ -29,4 +29,6 @@ DB_NAME=blogs
 INIT_DB_NAME=postgres
 GROQ_API_KEY=your_groq_api_key
 PORT=4000
+# to run the project locally, write the line below
+FRONT_END_URL=http://localhost:5173
 ```
