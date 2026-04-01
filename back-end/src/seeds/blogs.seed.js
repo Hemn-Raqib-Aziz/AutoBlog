@@ -1,7 +1,7 @@
 import db from "../config/db.js";
 import { generateRandomBlog } from "../services/aiClient.js";
 
-export const seedBlogs = async (count = 5) => {
+export const seedBlogs = async (count = 1) => {
   const check = await db.query("SELECT COUNT(*) FROM blogs");
   const existingCount = Number(check.rows[0].count);
 
