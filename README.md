@@ -119,7 +119,7 @@ docker-compose up -d --build
 
 ## 10. Verify Live URL
 
-- **Frontend:** http://ec2-51-21-222-191.eu-north-1.compute.amazonaws.com:5173/
+- **Frontend:** http://your_aws_public_dns.your_aws_region.compute.amazonaws.com:5173/
 
 
 - Daily blog generation runs at 3:00 AM via node-cron
